@@ -1,6 +1,9 @@
-import {setEntries, next, vote} from './core';
+import {setEntries, next, vote, INITIAL_STATE} from './core';
 
-export default function reducer  (state, action) {
+export default function reducer  (state=INITIAL_STATE, action) {
+  console.log('applying action: ' + action.type);
+  console.log(state);
+
   switch (action.type) {
     case 'SET_ENTRIES':
       return setEntries(state, action.entries);
